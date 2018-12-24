@@ -1,0 +1,36 @@
+{
+  "name": "clsx",
+  "version": "0.0.0",
+  "repository": "lukeed/clsx",
+  "description": "WIP",
+  "unpkg": "dist/clsx.min.js",
+  "module": "dist/clsx.mjs",
+  "main": "dist/clsx.js",
+  "license": "MIT",
+  "author": {
+    "name": "Luke Edwards",
+    "email": "luke.edwards05@gmail.com",
+    "url": "lukeed.com"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "build": "node builder",
+    "pretest": "npm run build",
+    "test": "tape test/*.js | tap-spec"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+  ],
+  "devDependencies": {
+    "gzip-size": "^3.0.0",
+    "mk-dirs": "^1.0.0",
+    "pretty-bytes": "^4.0.2",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.9.1",
+    "terser": "^3.10.0"
+  }
+}
