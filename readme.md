@@ -1,6 +1,6 @@
 # clsx [![Build Status](https://travis-ci.org/lukeed/clsx.svg?branch=master)](https://travis-ci.org/lukeed/clsx)
 
-> A tiny (200B) utility for constructing `className` strings conditionally.<Br>Also serves as a faster & smaller drop-in replacement for the `classnames` module.
+> A tiny (200B) utility for constructing `className` strings conditionally.<Br>Also serves as a [faster](/bench) & smaller drop-in replacement for the `classnames` module.
 
 This module is available in three formats:
 
@@ -63,6 +63,10 @@ The `clsx` function can take ***any*** number of arguments, each of which can be
 clxs(true, false, '', null, undefined, 0, NaN);
 //=> ''
 ```
+
+## Benchmarks
+
+For snapshots of cross-browser results, check out the [`bench`](/bench) directory~!
 
 
 ## Related
