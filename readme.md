@@ -71,7 +71,7 @@ For snapshots of cross-browser results, check out the [`bench`](/bench) director
 
 ## Related
 
-- [obj-str](https://github.com/lukeed/obj-str) - Similar utility that is faster and smaller (117B) but only works with Objects.
+- [obj-str](https://github.com/lukeed/obj-str) - Similar utility that is faster and smaller (100B) but only works with Objects.
 
 ## License
 
