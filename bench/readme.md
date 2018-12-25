@@ -6,8 +6,8 @@ These were run in a clean environment and on 4GHz i7 with 32GB of RAM. As you ca
 
 ---
 
-<img src="chrome.png" width="400" alt="chrome" style="border:2px solid" />
-
-<img src="firefox.png" width="400" alt="firefox" style="border:2px solid" />
-
-<img src="safari.png" width="400" alt="safari" style="border:2px solid" />
+<p align="center">
+  <img src="chrome.png" width="70%" alt="chrome" />
+  <img src="firefox.png" width="70%" alt="firefox" />
+  <img src="safari.png" width="70%" alt="safari" />
+</p>
