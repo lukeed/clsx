@@ -1,12 +1,11 @@
 export type ClassValue = ClassArray | ClassDictionary | string | number | null | boolean;
 
-interface ClassDictionary {
+export interface ClassDictionary {
 	[id: string]: any;
 }
 
-interface ClassArray extends Array<ClassValue> { }
+export interface ClassArray extends Array<ClassValue> { }
 
 declare const clsx: (...classes: ClassValue[]) => string;
 
-export = clsx;
-
+export default clsx;
