@@ -1,4 +1,4 @@
-type ClassValue = ClassArray | ClassDictionary | string | number | null | boolean;
+export type ClassValue = ClassArray | ClassDictionary | string | number | null | boolean;
 
 interface ClassDictionary {
 	[id: string]: any;
