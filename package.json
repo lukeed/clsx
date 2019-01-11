@@ -20,7 +20,9 @@
     "pretest": "npm run build",
     "test": "tape test/*.js | tap-spec"
   },
+  "types": "clsx.d.ts",
   "files": [
+    "*.d.ts",
     "dist"
   ],
   "keywords": [
