@@ -2,7 +2,7 @@
   "name": "clsx",
   "version": "1.0.0",
   "repository": "lukeed/clsx",
-  "description": "A tiny (200B) utility for constructing className strings conditionally.",
+  "description": "A tiny (199B) utility for constructing className strings conditionally.",
   "unpkg": "dist/clsx.min.js",
   "module": "dist/clsx.mjs",
   "main": "dist/clsx.js",
