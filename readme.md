@@ -60,7 +60,7 @@ The `clsx` function can take ***any*** number of arguments, each of which can be
 > **Important:** _Any_ falsey values are discarded!<br>Standalone Boolean values are discarded as well.
 
 ```js
-clxs(true, false, '', null, undefined, 0, NaN);
+clsx(true, false, '', null, undefined, 0, NaN);
 //=> ''
 ```
 
