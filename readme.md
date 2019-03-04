@@ -4,7 +4,7 @@
 
 This module is available in three formats:
 
-* **ES Module**: `dist/clsx.mjs`
+* **ES Module**: `dist/clsx.m.js`
 * **CommonJS**: `dist/clsx.js`
 * **UMD**: `dist/clsx.min.js`
 
