@@ -3,9 +3,10 @@
   "version": "1.0.3",
   "repository": "lukeed/clsx",
   "description": "A tiny (199B) utility for constructing className strings conditionally.",
-  "unpkg": "dist/clsx.min.js",
   "module": "dist/clsx.m.js",
+  "unpkg": "dist/clsx.min.js",
   "main": "dist/clsx.js",
+  "types": "clsx.d.ts",
   "license": "MIT",
   "author": {
     "name": "Luke Edwards",
@@ -20,7 +21,6 @@
     "pretest": "npm run build",
     "test": "tape test/*.js | tap-spec"
   },
-  "types": "clsx.d.ts",
   "files": [
     "*.d.ts",
     "dist"
