@@ -2,11 +2,20 @@ function toVal(mix) {
 	var k, y, str='';
 	if (mix) {
 		if (typeof mix === 'object') {
-			for (k in mix) {
-				if (mix[k] && (y = toVal(!!mix.push ? mix[k] : k))) {
+		if (!!mix.push) {
+			for (k=0; k < mix.length; k++) {
+				if (mix[k] && (y = toVal(mix[k]))) {
 					str && (str += ' ');
 					str += y;
 				}
+			}
+			} else {
+			for (k in mix) {
+				if (mix[k] && (y = toVal(k))) {
+					str && (str += ' ');
+					str += y;
+				}
+			}
 			}
 		} else if (typeof mix !== 'boolean' && !mix.call) {
 			str && (str += ' ');
