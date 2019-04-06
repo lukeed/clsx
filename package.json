@@ -1,6 +1,6 @@
 {
   "name": "clsx",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "repository": "lukeed/clsx",
   "description": "A tiny (223B) utility for constructing className strings conditionally.",
   "module": "dist/clsx.m.js",
