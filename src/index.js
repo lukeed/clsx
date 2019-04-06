@@ -8,7 +8,7 @@ function toVal(mix) {
 					str += y;
 				}
 			}
-		} else if (typeof mix !== 'boolean') {
+		} else if (typeof mix !== 'boolean' && !mix.call) {
 			str && (str += ' ');
 			str += mix;
 		}

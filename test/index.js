@@ -63,3 +63,11 @@ test('arrays (variadic)', t => {
 	t.is(fn(['foo'], null, ['baz', ''], true, '', []), 'foo baz');
 	t.end();
 });
+
+test('functions', t => {
+	const foo = () => {};
+	t.is(fn(foo, 'hello'), 'hello');
+	t.is(fn(foo, 'hello', fn), 'hello');
+	t.is(fn(foo, 'hello', [[fn], 'world']), 'hello world');
+	t.end();
+});
