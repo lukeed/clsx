@@ -1,5 +1,5 @@
 function toVal(mix) {
-	var k, y, str='';
+	let k, y, str='';
 	if (mix) {
 		if (typeof mix === 'object') {
 			if (!!mix.push) {
@@ -25,13 +25,13 @@ function toVal(mix) {
 	return str;
 }
 
-export default function () {
-	var i=0, x, str='';
-	while (i < arguments.length) {
-		if (x = toVal(arguments[i++])) {
+export default function (...args) {
+	let str = '';
+	args.forEach(arg=> {
+		if (let x = toVal(arg)) {
 			str && (str += ' ');
 			str += x
 		}
-	}
+	});
 	return str;
 }
