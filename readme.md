@@ -1,6 +1,6 @@
 # clsx [![Build Status](https://travis-ci.org/lukeed/clsx.svg?branch=master)](https://travis-ci.org/lukeed/clsx)
 
-> A tiny (223B) utility for constructing `className` strings conditionally.<Br>Also serves as a [faster](/bench) & smaller drop-in replacement for the `classnames` module.
+> A tiny (229B) utility for constructing `className` strings conditionally.<Br>Also serves as a [faster](/bench) & smaller drop-in replacement for the `classnames` module.
 
 This module is available in three formats:
 
@@ -67,6 +67,14 @@ clsx(true, false, '', null, undefined, 0, NaN);
 ## Benchmarks
 
 For snapshots of cross-browser results, check out the [`bench`](/bench) directory~!
+
+## Support
+
+All versions of Node.js are supported.
+
+All browsers that support [`Array.isArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray#Browser_compatibility) are supported (IE9+).
+
+>**Note:** For IE8 support and older, please install `clsx@1.0.x` and beware of [#17](https://github.com/lukeed/clsx/issues/17).
 
 
 ## Related

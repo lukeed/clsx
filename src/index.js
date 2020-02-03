@@ -2,7 +2,7 @@ function toVal(mix) {
 	var k, y, str='';
 	if (mix) {
 		if (typeof mix === 'object') {
-			if (!!mix.push) {
+			if (Array.isArray(mix)) {
 				for (k=0; k < mix.length; k++) {
 					if (mix[k] && (y = toVal(mix[k]))) {
 						str && (str += ' ');

@@ -64,6 +64,14 @@ test('arrays (variadic)', t => {
 	t.end();
 });
 
+test('arrays (no `push` escape)', t => {
+	t.is(fn({ push:1 }), 'push');
+	t.is(fn({ pop:true }), 'pop');
+	t.is(fn({ push:true }), 'push');
+	t.is(fn('hello', { world:1, push:true }), 'hello world push');
+	t.end();
+});
+
 test('functions', t => {
 	const foo = () => {};
 	t.is(fn(foo, 'hello'), 'hello');
