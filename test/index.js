@@ -1,5 +1,5 @@
-const test = require('tape');
-const fn = require('../dist/clsx');
+import test from 'tape';
+import fn from '../src';
 
 test('clsx', t => {
 	t.is(typeof fn, 'function', 'exports a function');

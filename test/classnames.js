@@ -2,8 +2,8 @@
  * Ported from `classnames` for compatibility checks.
  */
 
-const test = require('tape');
-const fn = require('../dist/clsx');
+import test from 'tape';
+import fn from '../src';
 
 test('(compat) keeps object keys with truthy values', t => {
 	const out = fn({ a:true, b:false, c:0, d:null, e:undefined, f:1 });
