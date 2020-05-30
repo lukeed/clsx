@@ -1,7 +1,9 @@
 function toVal(mix) {
 	var k, y, str='';
 
-	if (typeof mix === 'object') {
+	if (typeof mix === 'string' || typeof mix === 'number') {
+		str += mix;
+	} else if (typeof mix === 'object') {
 		if (Array.isArray(mix)) {
 			for (k=0; k < mix.length; k++) {
 				if (mix[k]) {
@@ -19,8 +21,6 @@ function toVal(mix) {
 				}
 			}
 		}
-	} else if (typeof mix !== 'boolean' && !mix.call) {
-		str += mix;
 	}
 
 	return str;
