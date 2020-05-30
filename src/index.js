@@ -1,26 +1,28 @@
 function toVal(mix) {
 	var k, y, str='';
-	if (mix) {
-		if (typeof mix === 'object') {
-			if (Array.isArray(mix)) {
-				for (k=0; k < mix.length; k++) {
+
+	if (typeof mix === 'object') {
+		if (Array.isArray(mix)) {
+			for (k=0; k < mix.length; k++) {
+				if (mix[k]) {
 					if (y = toVal(mix[k])) {
 						str && (str += ' ');
 						str += y;
 					}
 				}
-			} else {
-				for (k in mix) {
-					if (mix[k]) {
-						str && (str += ' ');
-						str += k;
-					}
+			}
+		} else {
+			for (k in mix) {
+				if (mix[k]) {
+					str && (str += ' ');
+					str += k;
 				}
 			}
-		} else if (typeof mix !== 'boolean' && !mix.call) {
-			str += mix;
 		}
+	} else if (typeof mix !== 'boolean' && !mix.call) {
+		str += mix;
 	}
+
 	return str;
 }
 
