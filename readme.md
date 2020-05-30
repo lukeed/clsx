@@ -1,6 +1,6 @@
 # clsx [![Build Status](https://travis-ci.org/lukeed/clsx.svg?branch=master)](https://travis-ci.org/lukeed/clsx)
 
-> A tiny (229B) utility for constructing `className` strings conditionally.<Br>Also serves as a [faster](/bench) & smaller drop-in replacement for the `classnames` module.
+> A tiny (228B) utility for constructing `className` strings conditionally.<Br>Also serves as a [faster](/bench) & smaller drop-in replacement for the `classnames` module.
 
 This module is available in three formats:
 
