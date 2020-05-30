@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        nodejs: [6, 8, 10, 12]
+        nodejs: [8, 10, 12]
     steps:
     - uses: actions/checkout@v1
     - uses: actions/setup-node@v1
@@ -22,12 +22,12 @@ jobs:
       uses: actions/cache@master
       with:
         path: node_modules
-        key: ${{ runner.os }}-${{ hashFiles('package.json') }}
+        key: ${{ runner.os }}-${{ hashFiles('**/package.json') }}
 
     - name: Install
       run: |
         pnpm install
-        pnpm add -g nyc
+        pnpm add -g nyc@13
 
     - name: Test w/ Coverage
       run: nyc --include=src pnpm test
