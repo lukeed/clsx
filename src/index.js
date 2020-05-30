@@ -18,7 +18,6 @@ function toVal(mix) {
 				}
 			}
 		} else if (typeof mix !== 'boolean' && !mix.call) {
-			str && (str += ' ');
 			str += mix;
 		}
 	}
