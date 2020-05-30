@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        nodejs: [8, 10, 12]
+        nodejs: [6, 8, 10, 12]
     steps:
     - uses: actions/checkout@v1
     - uses: actions/setup-node@v1
@@ -22,14 +22,21 @@ jobs:
         key: ${{ runner.os }}-${{ hashFiles('**/package.json') }}
 
     - name: Install
-      run: |
-        npm install
-        npm install -g nyc@13
+      run: npm install
 
-    - name: Test w/ Coverage
+    - name: (coverage) Install
+      if: matrix.nodejs >= 12
+      run: npm install -g nyc
+
+    - name: Test
+      run: npm test
+      if: matrix.nodejs < 12
+
+    - name: (coverage) Test
       run: nyc --include=src npm test
+      if: matrix.nodejs >= 12
 
-    - name: Report
+    - name: (coverage) Report
       if: matrix.nodejs >= 12
       run: |
         nyc report --reporter=text-lcov > coverage.lcov
