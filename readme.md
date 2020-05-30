@@ -79,7 +79,7 @@ All browsers that support [`Array.isArray`](https://developer.mozilla.org/en-US/
 
 ## Related
 
-- [obj-str](https://github.com/lukeed/obj-str) - Similar utility that is faster and smaller (96B) but only works with Objects.
+- [obj-str](https://github.com/lukeed/obj-str) - A smaller (96B) and similiar utility that only works with Objects.
 
 ## License
 

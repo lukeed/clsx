@@ -10,39 +10,39 @@ These are the results while running this directory's benchmark suite in Node v10
 
 ```
 # Strings
-  classcat ≠   x  8,701,496 ops/sec ±0.34% (95 runs sampled)
-  classnames   x  3,938,281 ops/sec ±1.60% (92 runs sampled)
-  clsx         x 11,253,372 ops/sec ±0.35% (96 runs sampled)
+  classcat ≠    x  8,719,816 ops/sec ±0.69% (91 runs sampled)
+  classnames    x  3,992,284 ops/sec ±1.64% (94 runs sampled)
+  clsx          x 12,784,134 ops/sec ±0.42% (97 runs sampled)
 
 # Objects
-  classcat ≠   x 8,594,500 ops/sec ±0.26% (98 runs sampled)
-  classnames   x 3,741,576 ops/sec ±0.21% (94 runs sampled)
-  clsx         x 7,288,178 ops/sec ±0.31% (96 runs sampled)
+  classcat ≠    x 8,680,509 ops/sec ±0.36% (97 runs sampled)
+  classnames    x 3,772,978 ops/sec ±0.46% (96 runs sampled)
+  clsx          x 9,412,010 ops/sec ±0.42% (95 runs sampled)
 
 # Arrays
-  classcat ≠   x 7,461,741 ops/sec ±1.04% (88 runs sampled)
-  classnames   x 1,649,404 ops/sec ±1.79% (93 runs sampled)
-  clsx         x 8,340,174 ops/sec ±0.53% (96 runs sampled)
+  classcat ≠    x 7,589,602 ops/sec ±0.62% (95 runs sampled)
+  classnames    x 1,665,275 ops/sec ±1.83% (93 runs sampled)
+  clsx          x 9,141,916 ops/sec ±0.42% (95 runs sampled)
 
 # Nested Arrays
-  classcat ≠   x 6,347,127 ops/sec ±0.30% (93 runs sampled)
-  classnames   x 1,154,165 ops/sec ±1.63% (93 runs sampled)
-  clsx         x 6,284,485 ops/sec ±0.58% (90 runs sampled)
+  classcat ≠    x 6,411,409 ops/sec ±0.84% (93 runs sampled)
+  classnames    x 1,164,706 ops/sec ±1.60% (95 runs sampled)
+  clsx          x 7,165,151 ops/sec ±0.47% (91 runs sampled)
 
 # Nested Arrays w/ Objects
-  classcat ≠   x 6,422,622 ops/sec ±0.36% (95 runs sampled)
-  classnames   x 1,614,032 ops/sec ±0.44% (96 runs sampled)
-  clsx         x 6,345,248 ops/sec ±0.21% (95 runs sampled)
+  classcat ≠    x 6,447,346 ops/sec ±0.68% (92 runs sampled)
+  classnames    x 1,597,180 ops/sec ±1.49% (93 runs sampled)
+  clsx          x 7,651,411 ops/sec ±0.56% (95 runs sampled)
 
 # Mixed
-  classcat ≠   x 7,071,223 ops/sec ±0.36% (95 runs sampled)
-  classnames   x 2,093,250 ops/sec ±1.38% (93 runs sampled)
-  clsx         x 6,557,515 ops/sec ±0.73% (91 runs sampled)
+  classcat ≠    x 6,595,879 ops/sec ±0.42% (96 runs sampled)
+  classnames    x 2,129,199 ops/sec ±1.46% (94 runs sampled)
+  clsx          x 8,119,210 ops/sec ±0.42% (93 runs sampled)
 
 # Mixed (Bad Data)
-  classcat ≠   x 1,761,143 ops/sec ±0.21% (96 runs sampled)
-  classnames   x 1,132,549 ops/sec ±0.91% (95 runs sampled)
-  clsx         x 2,018,654 ops/sec ±0.15% (98 runs sampled)
+  classcat ≠    x 1,771,920 ops/sec ±0.41% (96 runs sampled)
+  classnames    x 1,166,577 ops/sec ±0.84% (94 runs sampled)
+  clsx          x 2,238,939 ops/sec ±0.34% (95 runs sampled)
 ```
 
 ## Browsers
