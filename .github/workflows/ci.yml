@@ -30,7 +30,7 @@ jobs:
         pnpm add -g nyc@13
 
     - name: Test w/ Coverage
-      run: nyc --include=src pnpm test
+      run: nyc --include=src npm test
 
     - name: Report
       if: matrix.nodejs >= 12
