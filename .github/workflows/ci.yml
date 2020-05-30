@@ -15,9 +15,6 @@ jobs:
       with:
         node-version: ${{ matrix.nodejs }}
 
-    - name: (env) pnpm
-      run: curl -L https://raw.githubusercontent.com/pnpm/self-installer/master/install.js | node
-
     - name: (cache) restore
       uses: actions/cache@master
       with:
@@ -26,8 +23,8 @@ jobs:
 
     - name: Install
       run: |
-        pnpm install
-        pnpm add -g nyc@13
+        npm install
+        npm install -g nyc@13
 
     - name: Test w/ Coverage
       run: nyc --include=src npm test
