@@ -8,12 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        nodejs: [10, 12]
+        nodejs: [6, 8, 10, 12]
     steps:
-    - uses: actions/checkout@master
-      with:
-        fetch-depth: 1
-
+    - uses: actions/checkout@v1
     - uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.nodejs }}
@@ -21,24 +18,19 @@ jobs:
     - name: (env) pnpm
       run: curl -L https://raw.githubusercontent.com/pnpm/self-installer/master/install.js | node
 
-    - name: (lerna) restore
+    - name: (cache) restore
       uses: actions/cache@master
       with:
-        path: |
-          node_modules
-          */*/node_modules
-        key: ${{ runner.os }}-${{ hashFiles('**/package.json') }}
+        path: node_modules
+        key: ${{ runner.os }}-${{ hashFiles('package.json') }}
 
     - name: Install
       run: |
         pnpm install
         pnpm add -g nyc
 
-    - name: Build
-      run: pnpm run build
-
     - name: Test w/ Coverage
-      run: nyc --include=packages pnpm test
+      run: nyc --include=src pnpm test
 
     - name: Report
       if: matrix.nodejs >= 12
