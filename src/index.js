@@ -11,9 +11,9 @@ function toVal(mix) {
 				}
 			} else {
 				for (k in mix) {
-					if (mix[k] && (y = toVal(k))) {
+					if (mix[k]) {
 						str && (str += ' ');
-						str += y;
+						str += k;
 					}
 				}
 			}
