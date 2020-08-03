@@ -7,18 +7,18 @@ function toVal(mix) {
 	
 	if (typeof mix === 'object') {
 		if (Array.isArray(mix)) {
-			for (k=0; k < mix.length; k++) {
-				if (mix[k]) {
-					if (y = toVal(mix[k])) {
+			for (y=0; y < mix.length; y++) {
+				if (mix[y]) {
+					if (k = toVal(mix[y])) {
 						str && (str += ' ');
-						str += y;
+						str += k;
 					}
 				}
 			}
 		} else {
 			for (k in mix) {
 				if (mix[k]) {
-					str && (str += ' ');
+					str && (str += " ");
 					str += k;
 				}
 			}
