@@ -18,7 +18,7 @@ function toVal(mix) {
 		} else {
 			for (k in mix) {
 				if (mix[k]) {
-					str && (str += " ");
+					str && (str += ' ');
 					str += k;
 				}
 			}
