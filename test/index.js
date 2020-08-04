@@ -15,6 +15,11 @@ test('strings', t => {
 	t.end();
 });
 
+test('numbers', t => {
+	t.equal(fn(123, 456), '123 456');
+	t.end();
+});
+
 test('strings (variadic)', t => {
 	t.is(fn(''), '');
 	t.is(fn('foo'), 'foo');
