@@ -18,7 +18,7 @@ test('strings', t => {
 test('strings (variadic)', t => {
 	t.is(fn(''), '');
 	t.is(fn('foo', 'bar'), 'foo bar');
-	t.is(fn(true && 'foo', false && bar, 'baz'), 'foo baz');
+	t.is(fn(true && 'foo', false && 'bar', 'baz'), 'foo baz');
 	t.is(fn(false && 'foo', 'bar', 'baz', ''), 'bar baz');
 	t.end();
 });
