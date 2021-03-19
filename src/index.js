@@ -1,9 +1,9 @@
 function toVal(mix) {
-	var k, y, str='';
+	var k, y = typeof mix, str = '';
 
-	if (typeof mix === 'string' || typeof mix === 'number') {
+	if (y === 'string' || y === 'number') {
 		str += mix;
-	} else if (typeof mix === 'object') {
+	} else if (y === 'object') {
 		if (Array.isArray(mix)) {
 			for (k=0; k < mix.length; k++) {
 				if (mix[k]) {
