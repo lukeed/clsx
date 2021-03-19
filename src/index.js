@@ -5,7 +5,8 @@ function toVal(mix) {
 		str += mix;
 	} else if (typeof mix === 'object') {
 		if (Array.isArray(mix)) {
-			for (k=0; k < mix.length; k++) {
+			var len=mix.length, k=0;
+			for (; k < len; k++) {
 				if (mix[k]) {
 					if (y = toVal(mix[k])) {
 						str && (str += ' ');
@@ -27,9 +28,9 @@ function toVal(mix) {
 }
 
 export default function () {
-	var i=0, tmp, x, str='';
-	while (i < arguments.length) {
-		if (tmp = arguments[i++]) {
+	var i=0, tmp, x, str='', len=arguments.length;
+	for (; i < len; i++) {
+		if (tmp = arguments[i]) {
 			if (x = toVal(tmp)) {
 				str && (str += ' ');
 				str += x
