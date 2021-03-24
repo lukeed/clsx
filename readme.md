@@ -66,7 +66,11 @@ clsx(true, false, '', null, undefined, 0, NaN);
 
 ## Benchmarks
 
-For snapshots of cross-browser results, check out the [`bench`](/bench) directory~!
+For snapshots of cross-browser results, run the following commands: or check out the [`bench`](/bench) directory~!
+1. `npm install`
+1. `npm run build`
+1. `npm --prefix bench install`
+1. `npm --prefix bench start`
 
 ## Support
 

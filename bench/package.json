@@ -1,5 +1,8 @@
 {
   "private": true,
+  "scripts": {
+    "start": "node index"
+  },
   "devDependencies": {
     "benchmark": "^2.1.4",
     "classcat": "^3.2.5",
