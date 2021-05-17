@@ -1,40 +1,39 @@
-function toVal(mix) {
-	var k, y, str='';
+function detect (value) {
+	if (value) {
+		switch (typeof value) {
+			case 'string':
+			case 'number':
+				splice(value)
+				break
 
-	if (typeof mix === 'string' || typeof mix === 'number') {
-		str += mix;
-	} else if (typeof mix === 'object') {
-		if (Array.isArray(mix)) {
-			for (k=0; k < mix.length; k++) {
-				if (mix[k]) {
-					if (y = toVal(mix[k])) {
-						str && (str += ' ');
-						str += y;
-					}
+			case 'object':
+				if (value instanceof Array) {
+					return forEach(value)
 				}
-			}
-		} else {
-			for (k in mix) {
-				if (mix[k]) {
-					str && (str += ' ');
-					str += k;
+				for (const key in value) {
+					if (value[key]) splice(key)
 				}
-			}
+				break
 		}
 	}
-
-	return str;
 }
 
-export default function () {
-	var i=0, tmp, x, str='';
-	while (i < arguments.length) {
-		if (tmp = arguments[i++]) {
-			if (x = toVal(tmp)) {
-				str && (str += ' ');
-				str += x
-			}
-		}
+function forEach (classes) {
+	for (let index = 0; index < classes.length;) {
+		detect(classes[index++])
 	}
-	return str;
 }
+
+function splice (value) {
+	V += (V && value && ' ') + value
+}
+
+function clsx () {
+	V = ''
+	forEach(arguments)
+	return V
+}
+
+let V
+
+export default clsx
