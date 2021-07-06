@@ -7,11 +7,11 @@ function toStr(mix) {
 			if (Array.isArray(mix)) {
 				return digest(mix);
 			}
-		return Object.keys(mix)
-			.filter(function(key) {
-				return mix[key];
-			})
-			.join(' ');
+			return Object.keys(mix)
+				.filter(function(key) {
+					return mix[key];
+				})
+				.join(' ');
 		default:
 			return '';
 	}
