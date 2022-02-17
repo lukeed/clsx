@@ -5,8 +5,8 @@ function toVal(mix) {
 		str += mix;
 	} else if (typeof mix === 'object') {
 		if (Array.isArray(mix)) {
-			var len=mix.length, k=0;
-			for (; k < len; k++) {
+			var len=mix.length;
+			for (k = 0; k < len; k++) {
 				if (mix[k]) {
 					if (y = toVal(mix[k])) {
 						str && (str += ' ');
