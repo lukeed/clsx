@@ -46,6 +46,12 @@ clsx('foo', [1 && 'bar', { baz:false, bat:null }, ['hello', ['world']]], 'cya');
 //=> 'foo bar hello world cya'
 ```
 
+Named imports are also available to comply with ES6 module especifications:
+
+```js
+import { clsx } from 'clsx';
+```
+
 
 ## API
 

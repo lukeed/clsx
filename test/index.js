@@ -1,9 +1,13 @@
 import test from 'tape';
 import fn from '../src';
+import { clsx } from '../src';
 
 test('clsx', t => {
 	t.is(typeof fn, 'function', 'exports a function');
 	t.is(typeof fn(), 'string', '~> returns string output');
+	t.is(fn, clsx, "named import available");
+	t.is(typeof clsx, "function", "exports a named function");
+	t.is(typeof clsx(), "string", "~> returns string output");
 	t.end();
 });
 

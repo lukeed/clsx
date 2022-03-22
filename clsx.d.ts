@@ -6,6 +6,6 @@ export interface ClassDictionary {
 
 export interface ClassArray extends Array<ClassValue> { }
 
-declare const clsx: (...classes: ClassValue[]) => string;
+export const clsx: (...classes: ClassValue[]) => string;
 
 export default clsx;
