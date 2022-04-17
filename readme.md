@@ -12,7 +12,11 @@ This module is available in three formats:
 ## Install
 
 ```
-$ npm install --save clsx
+npm install --save clsx
+```
+  
+```
+yarn add clsx
 ```
 
 
