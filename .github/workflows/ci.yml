@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        nodejs: [6, 8, 10, 12, 14, 16]
+        nodejs: [8, 10, 12, 14, 16]
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v2
@@ -27,6 +27,9 @@ jobs:
     - name: (coverage) Install
       if: matrix.nodejs >= 16
       run: npm install -g nyc
+
+    - name: Build
+      run: npm run build
 
     - name: Test
       run: npm test

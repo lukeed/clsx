@@ -18,8 +18,7 @@
   },
   "scripts": {
     "build": "bundt",
-    "pretest": "npm run build",
-    "test": "tape -r esm test/*.js | tap-spec"
+    "test": "uvu -r esm test"
   },
   "files": [
     "*.d.ts",
@@ -33,7 +32,6 @@
   "devDependencies": {
     "bundt": "1.0.1",
     "esm": "3.2.25",
-    "tap-spec": "5.0.0",
-    "tape": "4.9.1"
+    "uvu": "0.5.4"
   }
 }
