@@ -1,9 +1,16 @@
 import test from 'tape';
-import fn from '../src';
+import * as mod from '../src';
 
-test('clsx', t => {
-	t.is(typeof fn, 'function', 'exports a function');
-	t.is(typeof fn(), 'string', '~> returns string output');
+const fn = mod.default;
+
+test('exports', t => {
+	t.is(typeof mod.default, 'function', 'exports default function');
+	t.is(typeof mod.clsx, 'function', 'exports named function');
+	t.ok(mod.default === mod.clsx, 'exports are equal');
+	
+	t.is(typeof mod.default(), 'string', '~> returns string output');
+	t.is(typeof mod.clsx(), 'string', '~> returns string output');
+	
 	t.end();
 });
 

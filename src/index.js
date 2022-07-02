@@ -26,7 +26,7 @@ function toVal(mix) {
 	return str;
 }
 
-export default function () {
+export function clsx() {
 	var i=0, tmp, x, str='';
 	while (i < arguments.length) {
 		if (tmp = arguments[i++]) {
@@ -38,3 +38,5 @@ export default function () {
 	}
 	return str;
 }
+
+export default clsx;
