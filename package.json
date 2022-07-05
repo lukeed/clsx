@@ -17,7 +17,7 @@
     "node": ">=6"
   },
   "scripts": {
-    "build": "bundt",
+    "build": "node bin",
     "test": "uvu -r esm test"
   },
   "files": [
@@ -30,8 +30,8 @@
     "classnames"
   ],
   "devDependencies": {
-    "bundt": "1.0.1",
     "esm": "3.2.25",
-    "uvu": "0.5.4"
+    "terser": "4.8.0",
+    "uvu": "0.5.6"
   }
 }
