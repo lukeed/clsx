@@ -4,6 +4,8 @@ const zlib = require('zlib');
 const { minify } = require('terser');
 const pkg = require('../package.json');
 
+if (!fs.existsSync('dist')) fs.mkdirSync('dist');
+
 /**
  * @param {string} file
  * @param {string} source
