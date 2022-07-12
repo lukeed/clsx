@@ -1,81 +1,81 @@
-import test from 'tape';
-import fn from '../src';
+// @ts-check
+import { test } from 'uvu';
+import * as assert from 'uvu/assert';
+import * as mod from '../src';
 
-test('clsx', t => {
-	t.is(typeof fn, 'function', 'exports a function');
-	t.is(typeof fn(), 'string', '~> returns string output');
-	t.end();
+const fn = mod.default;
+
+test('exports', () => {
+	assert.type(mod.default, 'function', 'exports default function');
+	assert.type(mod.clsx, 'function', 'exports named function');
+	assert.is(mod.default, mod.clsx, 'exports are equal');
+
+	assert.type(mod.default(), 'string', '~> returns string output');
+	assert.type(mod.clsx(), 'string', '~> returns string output');
 });
 
-test('strings', t => {
-	t.is(fn(''), '');
-	t.is(fn('foo'), 'foo');
-	t.is(fn(true && 'foo'), 'foo');
-	t.is(fn(false && 'foo'), '');
-	t.end();
+test('strings', () => {
+	assert.is(fn(''), '');
+	assert.is(fn('foo'), 'foo');
+	assert.is(fn(true && 'foo'), 'foo');
+	assert.is(fn(false && 'foo'), '');
 });
 
-test('strings (variadic)', t => {
-	t.is(fn(''), '');
-	t.is(fn('foo'), 'foo');
-	t.is(fn(true && 'foo'), 'foo');
-	t.is(fn(false && 'foo'), '');
-	t.end();
+test('strings (variadic)', () => {
+	assert.is(fn(''), '');
+	assert.is(fn('foo', 'bar'), 'foo bar');
+	assert.is(fn(true && 'foo', false && 'bar', 'baz'), 'foo baz');
+	assert.is(fn(false && 'foo', 'bar', 'baz', ''), 'bar baz');
 });
 
-test('objects', t => {
-	t.is(fn({}), '');
-	t.is(fn({ foo:true }), 'foo');
-	t.is(fn({ foo:true, bar:false }), 'foo');
-	t.is(fn({ foo:'hiya', bar:1 }), 'foo bar');
-	t.is(fn({ foo:1, bar:0, baz:1 }), 'foo baz');
-	t.is(fn({ '-foo':1, '--bar':1 }), '-foo --bar');
-	t.end();
+test('objects', () => {
+	assert.is(fn({}), '');
+	assert.is(fn({ foo:true }), 'foo');
+	assert.is(fn({ foo:true, bar:false }), 'foo');
+	assert.is(fn({ foo:'hiya', bar:1 }), 'foo bar');
+	assert.is(fn({ foo:1, bar:0, baz:1 }), 'foo baz');
+	assert.is(fn({ '-foo':1, '--bar':1 }), '-foo --bar');
 });
 
-test('objects (variadic)', t => {
-	t.is(fn({}, {}), '');
-	t.is(fn({ foo:1 }, { bar:2 }), 'foo bar');
-	t.is(fn({ foo:1 }, null, { baz:1, bat:0 }), 'foo baz');
-	t.is(fn({ foo:1 }, {}, {}, { bar:'a' }, { baz:null, bat:Infinity }), 'foo bar bat');
-	t.end();
+test('objects (variadic)', () => {
+	assert.is(fn({}, {}), '');
+	assert.is(fn({ foo:1 }, { bar:2 }), 'foo bar');
+	assert.is(fn({ foo:1 }, null, { baz:1, bat:0 }), 'foo baz');
+	assert.is(fn({ foo:1 }, {}, {}, { bar:'a' }, { baz:null, bat:Infinity }), 'foo bar bat');
 });
 
-test('arrays', t => {
-	t.is(fn([]), '');
-	t.is(fn(['foo']), 'foo');
-	t.is(fn(['foo', 'bar']), 'foo bar');
-	t.is(fn(['foo', 0 && 'bar', 1 && 'baz']), 'foo baz');
-	t.end();
+test('arrays', () => {
+	assert.is(fn([]), '');
+	assert.is(fn(['foo']), 'foo');
+	assert.is(fn(['foo', 'bar']), 'foo bar');
+	assert.is(fn(['foo', 0 && 'bar', 1 && 'baz']), 'foo baz');
 });
 
-test('arrays (nested)', t => {
-	t.is(fn([[[]]]), '');
-	t.is(fn([[['foo']]]), 'foo');
-	t.is(fn([true, [['foo']]]), 'foo');;
-	t.is(fn(['foo', ['bar', ['', [['baz']]]]]), 'foo bar baz');
-	t.end();
+test('arrays (nested)', () => {
+	assert.is(fn([[[]]]), '');
+	assert.is(fn([[['foo']]]), 'foo');
+	assert.is(fn([true, [['foo']]]), 'foo');;
+	assert.is(fn(['foo', ['bar', ['', [['baz']]]]]), 'foo bar baz');
 });
 
-test('arrays (variadic)', t => {
-	t.is(fn([], []), '');
-	t.is(fn(['foo'], ['bar']), 'foo bar');
-	t.is(fn(['foo'], null, ['baz', ''], true, '', []), 'foo baz');
-	t.end();
+test('arrays (variadic)', () => {
+	assert.is(fn([], []), '');
+	assert.is(fn(['foo'], ['bar']), 'foo bar');
+	assert.is(fn(['foo'], null, ['baz', ''], true, '', []), 'foo baz');
 });
 
-test('arrays (no `push` escape)', t => {
-	t.is(fn({ push:1 }), 'push');
-	t.is(fn({ pop:true }), 'pop');
-	t.is(fn({ push:true }), 'push');
-	t.is(fn('hello', { world:1, push:true }), 'hello world push');
-	t.end();
+test('arrays (no `push` escape)', () => {
+	assert.is(fn({ push:1 }), 'push');
+	assert.is(fn({ pop:true }), 'pop');
+	assert.is(fn({ push:true }), 'push');
+	assert.is(fn('hello', { world:1, push:true }), 'hello world push');
 });
 
-test('functions', t => {
+test('functions', () => {
 	const foo = () => {};
-	t.is(fn(foo, 'hello'), 'hello');
-	t.is(fn(foo, 'hello', fn), 'hello');
-	t.is(fn(foo, 'hello', [[fn], 'world']), 'hello world');
-	t.end();
+	assert.is(fn(foo, 'hello'), 'hello');
+	assert.is(fn(foo, 'hello', fn), 'hello');
+	assert.is(fn(foo, 'hello', [[fn], 'world']), 'hello world');
 });
+
+test.run();

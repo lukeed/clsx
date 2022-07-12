@@ -39,3 +39,5 @@ export default function () {
 	}
 	return str;
 }
+
+export default clsx;

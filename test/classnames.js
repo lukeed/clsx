@@ -2,84 +2,71 @@
  * Ported from `classnames` for compatibility checks.
  */
 
-import test from 'tape';
-import fn from '../src';
+import { test } from 'uvu';
+import * as assert from 'uvu/assert';
+import clsx from '../src';
 
-test('(compat) keeps object keys with truthy values', t => {
-	const out = fn({ a:true, b:false, c:0, d:null, e:undefined, f:1 });
-	t.is(out, 'a f');
-	t.end();
+test('(compat) keeps object keys with truthy values', () => {
+	const out = clsx({ a:true, b:false, c:0, d:null, e:undefined, f:1 });
+	assert.is(out, 'a f');
 });
 
-test('(compat) joins arrays of class names and ignore falsy values', t => {
-	const out = fn('a', 0, null, undefined, true, 1, 'b');
-	t.is(out, 'a 1 b');
-	t.end();
+test('(compat) joins arrays of class names and ignore falsy values', () => {
+	const out = clsx('a', 0, null, undefined, true, 1, 'b');
+	assert.is(out, 'a 1 b');
 });
 
-test('(compat) supports heterogenous arguments', t => {
-	t.is(fn({ a:true }, 'b', 0), 'a b');
-	t.end();
+test('(compat) supports heterogenous arguments', () => {
+	assert.is(clsx({ a:true }, 'b', 0), 'a b');
 });
 
-test('(compat) should be trimmed', t => {
-	t.is(fn('', 'b', {}, ''), 'b');
-	t.end();
+test('(compat) should be trimmed', () => {
+	assert.is(clsx('', 'b', {}, ''), 'b');
 });
 
-test('(compat) returns an empty string for an empty configuration', t => {
-	t.is(fn({}), '');
-	t.end();
+test('(compat) returns an empty string for an empty configuration', () => {
+	assert.is(clsx({}), '');
 });
 
-test('(compat) supports an array of class names', t => {
-	t.is(fn(['a', 'b']), 'a b');
-	t.end();
+test('(compat) supports an array of class names', () => {
+	assert.is(clsx(['a', 'b']), 'a b');
 });
 
-test('(compat) joins array arguments with string arguments', t => {
-	t.is(fn(['a', 'b'], 'c'), 'a b c');
-	t.is(fn('c', ['a', 'b']), 'c a b');
-	t.end();
+test('(compat) joins array arguments with string arguments', () => {
+	assert.is(clsx(['a', 'b'], 'c'), 'a b c');
+	assert.is(clsx('c', ['a', 'b']), 'c a b');
 });
 
-test('(compat) handles multiple array arguments', t => {
-	t.is(fn(['a', 'b'], ['c', 'd']), 'a b c d');
-	t.end();
+test('(compat) handles multiple array arguments', () => {
+	assert.is(clsx(['a', 'b'], ['c', 'd']), 'a b c d');
 });
 
-test('(compat) handles arrays that include falsy and true values', t => {
-	t.is(fn(['a', 0, null, undefined, false, true, 'b']), 'a b');
-	t.end();
+test('(compat) handles arrays that include falsy and true values', () => {
+	assert.is(clsx(['a', 0, null, undefined, false, true, 'b']), 'a b');
 });
 
-test('(compat) handles arrays that include arrays', t => {
-	t.is(fn(['a', ['b', 'c']]), 'a b c');
-	t.end();
+test('(compat) handles arrays that include arrays', () => {
+	assert.is(clsx(['a', ['b', 'c']]), 'a b c');
 });
 
-test('(compat) handles arrays that include objects', t => {
-	t.is(fn(['a', { b:true, c:false }]), 'a b');
-	t.end();
+test('(compat) handles arrays that include objects', () => {
+	assert.is(clsx(['a', { b:true, c:false }]), 'a b');
 });
 
-test('(compat) handles deep array recursion', t => {
-	t.is(fn(['a', ['b', ['c', { d:true }]]]), 'a b c d');
-	t.end();
+test('(compat) handles deep array recursion', () => {
+	assert.is(clsx(['a', ['b', ['c', { d:true }]]]), 'a b c d');
 });
 
-test('(compat) handles arrays that are empty', t => {
-	t.is(fn('a', []), 'a');
-	t.end();
+test('(compat) handles arrays that are empty', () => {
+	assert.is(clsx('a', []), 'a');
 });
 
-test('(compat) handles nested arrays that have empty nested arrays', t => {
-	t.is(fn('a', [[]]), 'a');
-	t.end();
+test('(compat) handles nested arrays that have empty nested arrays', () => {
+	assert.is(clsx('a', [[]]), 'a');
 });
 
-test('(compat) handles all types of truthy and falsy property values as expected', t => {
-	const out = fn({
+test('(compat) handles all types of truthy and falsy property values as expected', () => {
+	const out = clsx({
 		// falsy:
 		null: null,
 		emptyString: '',
@@ -100,6 +87,7 @@ test('(compat) handles all types of truthy and falsy property values as expected
 		greaterZero: 1
 	});
 
-	t.is(out, 'nonEmptyString whitespace function emptyObject nonEmptyObject emptyList nonEmptyList greaterZero');
-	t.end();
+	assert.is(out, 'nonEmptyString whitespace function emptyObject nonEmptyObject emptyList nonEmptyList greaterZero');
 });
+
+test.run();

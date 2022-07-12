@@ -20,6 +20,8 @@ $ npm install --save clsx
 
 ```js
 import clsx from 'clsx';
+// or
+import { clsx } from 'clsx';
 
 // Strings (variadic)
 clsx('foo', true && 'bar', 'baz');
