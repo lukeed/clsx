@@ -46,6 +46,13 @@ clsx(['foo'], ['', 0, false, 'bar'], [['baz', [['hello'], 'there']]]);
 // Kitchen sink (with nesting)
 clsx('foo', [1 && 'bar', { baz:false, bat:null }, ['hello', ['world']]], 'cya');
 //=> 'foo bar hello world cya'
+
+// Kitchen sink (strings with object nesting space removed)
+clsx( 'foo bar', 'foo_' + clsx({
+  'bar': true,
+  'foo': false
+})
+//=> 'foo bar foo_bar'
 ```
 
 
