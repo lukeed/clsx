@@ -5,14 +5,7 @@ function toVal(mix) {
 		str += mix;
 	} else if (typeof mix === 'object') {
 		if (Array.isArray(mix)) {
-			for (k=0; k < mix.length; k++) {
-				if (mix[k]) {
-					if (y = toVal(mix[k])) {
-						str && (str += ' ');
-						str += y;
-					}
-				}
-			}
+			return clsx.apply(null, mix)
 		} else {
 			for (k in mix) {
 				if (mix[k]) {
