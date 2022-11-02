@@ -3,4 +3,5 @@ export type ClassDictionary = Record<string, any>;
 export type ClassArray = ClassValue[];
 
 export declare function clsx(...inputs: ClassValue[]): string;
+export declare function selx(...inputs: ClassValue[]): string;
 export default clsx;
