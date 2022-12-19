@@ -7,6 +7,15 @@
   "unpkg": "dist/clsx.min.js",
   "main": "dist/clsx.js",
   "types": "clsx.d.ts",
+  "exports": {
+    ".": {
+      "types": "./clsx.d.ts",
+      "require": "./dist/clsx.js",
+      "import": "./dist/clsx.m.js",
+      "browser": "./dist/clsx.min.js"
+    },
+    "./package.json": "./package.json"
+  },
   "license": "MIT",
   "author": {
     "name": "Luke Edwards",
