@@ -83,7 +83,8 @@ All browsers that support [`Array.isArray`](https://developer.mozilla.org/en-US/
 
 - [obj-str](https://github.com/lukeed/obj-str) - A smaller (96B) and similiar utility that only works with Objects.
 
-## Tailwind CSS
+## Tailwind Support
+
 Here some additional (optional) steps to enable classes autocompletition using `clsx` with Tailwind CSS.
 <details>
 
