@@ -78,11 +78,6 @@ All browsers that support [`Array.isArray`](https://developer.mozilla.org/en-US/
 
 >**Note:** For IE8 support and older, please install `clsx@1.0.x` and beware of [#17](https://github.com/lukeed/clsx/issues/17).
 
-
-## Related
-
-- [obj-str](https://github.com/lukeed/obj-str) - A smaller (96B) and similiar utility that only works with Objects.
-
 ## Tailwind Support
 
 Here some additional (optional) steps to enable classes autocompletition using `clsx` with Tailwind CSS.
@@ -105,6 +100,9 @@ Here some additional (optional) steps to enable classes autocompletition using `
   ```
 </details>
 
+## Related
+
+- [obj-str](https://github.com/lukeed/obj-str) - A smaller (96B) and similiar utility that only works with Objects.
 
 ## License
 
