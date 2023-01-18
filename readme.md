@@ -78,6 +78,27 @@ All browsers that support [`Array.isArray`](https://developer.mozilla.org/en-US/
 
 >**Note:** For IE8 support and older, please install `clsx@1.0.x` and beware of [#17](https://github.com/lukeed/clsx/issues/17).
 
+## Tailwind Support
+
+Here some additional (optional) steps to enable classes autocompletition using `clsx` with Tailwind CSS.
+<details>
+
+<summary>
+  Visual Studio Code
+</summary>
+
+1. [Install the "Tailwind CSS IntelliSense" Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
+
+2. Add the following to your [`settings.json`](https://code.visualstudio.com/docs/getstarted/settings):
+
+  ```json
+   {
+    "tailwindCSS.experimental.classRegex": [
+      ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+    ]
+   }
+  ```
+</details>
 
 ## Related
 
