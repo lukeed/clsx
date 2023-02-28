@@ -80,7 +80,7 @@ All browsers that support [`Array.isArray`](https://developer.mozilla.org/en-US/
 
 ## Tailwind Support
 
-Here some additional (optional) steps to enable classes autocompletition using `clsx` with Tailwind CSS.
+Here some additional (optional) steps to enable classes autocompletion using `clsx` with Tailwind CSS.
 <details>
 
 <summary>
