@@ -1,6 +1,6 @@
 {
   "name": "clsx-ts",
-  "version": "0.1.0-alpha",
+  "version": "0.1.0-alpha.1",
   "repository": "sebdybowski/clsx-ts",
   "description": "A tiny utility for constructing `className` strings conditionally. Now with typescipt support!",
   "module": "dist/clsx.m.js",
