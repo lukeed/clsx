@@ -100,6 +100,23 @@ Here some additional (optional) steps to enable classes autocompletion using `cl
   ```
 </details>
 
+<details>
+
+<summary>
+  JetBrains IDEs
+</summary>
+
+1. Add the following to the ["Tailwind CSS" config in settings](https://blog.jetbrains.com/webstorm/2023/03/webstorm-2023-1/#markup_languages_and_css):
+
+  ```json
+   {
+    "tailwindCSS.experimental.classRegex": [
+      ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+    ]
+   }
+  ```
+</details>
+
 ## Related
 
 - [obj-str](https://github.com/lukeed/obj-str) - A smaller (96B) and similiar utility that only works with Objects.
