@@ -110,9 +110,11 @@ Here some additional (optional) steps to enable classes autocompletion using `cl
 
   ```json
    {
-    "tailwindCSS.experimental.classRegex": [
-      ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
-    ]
+      "experimental": {
+        "classRegex": [
+          ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+        ]
+      }
    }
   ```
 </details>
