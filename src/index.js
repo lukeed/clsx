@@ -1,39 +1,45 @@
 function toVal(mix) {
-	var k, y, str='';
-
-	if (typeof mix === 'string' || typeof mix === 'number') {
-		str += mix;
-	} else if (typeof mix === 'object') {
-		if (Array.isArray(mix)) {
-			for (k=0; k < mix.length; k++) {
-				if (mix[k]) {
-					if (y = toVal(mix[k])) {
-						str && (str += ' ');
-						str += y;
-					}
-				}
-			}
-		} else {
-			for (k in mix) {
-				if (mix[k]) {
-					str && (str += ' ');
-					str += k;
-				}
-			}
-		}
+	if (mix === null || mix === undefined) {
+		return '';
 	}
 
-	return str;
+	if (typeof mix === 'string' || typeof mix === 'number') {
+		return mix;
+	}
+
+	if (Array.isArray(mix)) {
+		let str = '';
+		for (let i = 0; i < mix.length; i++) {
+			const val = toVal(mix[i]);
+			if (val) {
+				str && (str += ' ');
+				str += val;
+			}
+		}
+		return str;
+	}
+
+	if (typeof mix === 'object') {
+		let str = '';
+		for (const key in mix) {
+			if (mix[key]) {
+				str && (str += ' ');
+				str += key;
+			}
+		}
+		return str;
+	}
+
+	return '';
 }
 
-export function clsx() {
-	var i=0, tmp, x, str='';
-	while (i < arguments.length) {
-		if (tmp = arguments[i++]) {
-			if (x = toVal(tmp)) {
-				str && (str += ' ');
-				str += x
-			}
+export function clsx(...args) {
+	let str = '';
+	for (let i = 0; i < args.length; i++) {
+		const val = toVal(args[i]);
+		if (val) {
+			str && (str += ' ');
+			str += val;
 		}
 	}
 	return str;
