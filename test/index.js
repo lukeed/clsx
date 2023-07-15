@@ -28,6 +28,21 @@ test('strings (variadic)', () => {
 	assert.is(fn(false && 'foo', 'bar', 'baz', ''), 'bar baz');
 });
 
+test('numbers', () => {
+	assert.is(fn(1), '1');
+	assert.is(fn(12), '12');
+	assert.is(fn(0.1), '0.1');
+	assert.is(fn(0), '');
+
+	assert.is(fn(Infinity), 'Infinity');
+	assert.is(fn(NaN), '');
+});
+
+test('numbers (variadic)', () => {
+	assert.is(fn(0, 1), '1');
+	assert.is(fn(1, 2), '1 2');
+});
+
 test('objects', () => {
 	assert.is(fn({}), '');
 	assert.is(fn({ foo:true }), 'foo');
