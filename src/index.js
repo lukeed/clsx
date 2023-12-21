@@ -5,7 +5,7 @@ function toVal(mix) {
 		str += mix;
 	} else if (typeof mix === 'object') {
 		if (Array.isArray(mix)) {
-			for (k=0; k < mix.length; k++) {
+			for (const k in mix) {
 				if (mix[k]) {
 					if (y = toVal(mix[k])) {
 						str && (str += ' ');
@@ -15,10 +15,7 @@ function toVal(mix) {
 			}
 		} else {
 			for (k in mix) {
-				if (mix[k]) {
-					str && (str += ' ');
-					str += k;
-				}
+				if (mix[k]){str && (str += ' '); str += k }
 			}
 		}
 	}
