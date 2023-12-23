@@ -15,12 +15,19 @@ function toVal(mix) {
 			}
 		} else {
 			for (k in mix) {
-				if (mix[k]) {
+				if (typeof mix[k] === 'function') {
+					if (mix[k]()) {
+						str && (str += ' ');
+						str += k;
+					}
+				} else if (mix[k]) {
 					str && (str += ' ');
 					str += k;
 				}
 			}
 		}
+	} else if (typeof mix === 'function') {
+		str += mix()
 	}
 
 	return str;
