@@ -7,7 +7,7 @@ const old = require('clsx');
 function bench(name, ...args) {
 	console.log(`\n# ${name}`);
 	new Suite()
-		.add('classcat*   ', () => classcat.apply(classcat, [args]))
+		.add('classcat ≠  ', () => classcat.apply(classcat, [args]))
 		.add('classnames  ', () => classnames.apply(classnames, args))
 		.add('clsx (prev) ', () => old.apply(old, args))
 		.add('clsx        ', () => clsx.apply(clsx, args))
