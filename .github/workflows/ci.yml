@@ -8,10 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        nodejs: [8, 10, 12, 14, 16]
+        nodejs: [8, 10, 12, 14, 16, 18]
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.nodejs }}
 
@@ -25,7 +25,7 @@ jobs:
       run: npm install
 
     - name: (coverage) Install
-      if: matrix.nodejs >= 16
+      if: matrix.nodejs >= 18
       run: npm install -g nyc
 
     - name: Build
@@ -33,14 +33,14 @@ jobs:
 
     - name: Test
       run: npm test
-      if: matrix.nodejs < 16
+      if: matrix.nodejs < 18
 
     - name: (coverage) Test
       run: nyc --include=src npm test
-      if: matrix.nodejs >= 16
+      if: matrix.nodejs >= 18
 
     - name: (coverage) Report
-      if: matrix.nodejs >= 16
+      if: matrix.nodejs >= 18
       run: |
         nyc report --reporter=text-lcov > coverage.lcov
         bash <(curl -s https://codecov.io/bash)
