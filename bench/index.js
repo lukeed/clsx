@@ -3,6 +3,7 @@ const classnames = require('classnames');
 const classcat = require('classcat');
 const clsx = require('../dist/clsx');
 const old = require('clsx');
+const lite = require('../dist/lite');
 
 function bench(name, ...args) {
 	console.log(`\n# ${name}`);
@@ -11,6 +12,7 @@ function bench(name, ...args) {
 		.add('classnames  ', () => classnames.apply(classnames, args))
 		.add('clsx (prev) ', () => old.apply(old, args))
 		.add('clsx        ', () => clsx.apply(clsx, args))
+		.add('clsx (lite) ', () => lite.apply(lite, args))
 		.on('cycle', e => console.log('  ' + e.target))
 		.run();
 }

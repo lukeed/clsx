@@ -13,6 +13,7 @@ These are the results while running this directory's benchmark suite in Node v20
   classcat ≠   x  9,613,381 ops/sec ±0.16% (94 runs sampled)
   classnames   x  6,540,072 ops/sec ±0.11% (101 runs sampled)
   clsx         x 12,924,662 ops/sec ±0.15% (102 runs sampled)
+  clsx/lite    x 13,122,004 ops/sec ±0.40% (99 runs sampled)
 
 # Objects
   classcat ≠   x 8,936,903 ops/sec ±0.12% (100 runs sampled)

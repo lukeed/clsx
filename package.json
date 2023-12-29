@@ -6,18 +6,30 @@
   "module": "dist/clsx.mjs",
   "unpkg": "dist/clsx.min.js",
   "main": "dist/clsx.js",
-  "exports": {
-    "import": {
-      "types": "./clsx.d.mts",
-      "default": "./dist/clsx.mjs"
-    },
-    "default": {
-      "types": "./clsx.d.ts",
-      "default": "./dist/clsx.js"
-    }
-  },
   "types": "clsx.d.ts",
   "license": "MIT",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./clsx.d.mts",
+        "default": "./dist/clsx.mjs"
+      },
+      "default": {
+        "types": "./clsx.d.ts",
+        "default": "./dist/clsx.js"
+      }
+    },
+    "./lite": {
+      "import": {
+        "types": "./clsx.d.mts",
+        "default": "./dist/lite.mjs"
+      },
+      "default": {
+        "types": "./clsx.d.ts",
+        "default": "./dist/lite.js"
+      }
+    }
+  },
   "author": {
     "name": "Luke Edwards",
     "email": "luke.edwards05@gmail.com",

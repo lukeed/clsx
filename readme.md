@@ -66,6 +66,45 @@ clsx(true, false, '', null, undefined, 0, NaN);
 //=> ''
 ```
 
+## Modes
+
+There are multiple "versions" of `clsx` available, which allows you to bring only the functionality you need!
+
+#### `clsx`
+> **Size (gzip):** 239 bytes<br>
+> **Availability:** CommonJS, ES Module, UMD
+
+The default `clsx` module; see [API](#API) for info.
+
+```js
+import { clsx } from 'clsx';
+// or
+import clsx from 'clsx';
+```
+
+#### `clsx/lite`
+> **Size (gzip):** 140 bytes<br>
+> **Availability:** CommonJS, ES Module<br>
+> **CAUTION:** Accepts **ONLY** string arguments!
+
+Ideal for applications that ***only*** use the string-builder pattern.
+
+Any non-string arguments are ignored!
+
+```js
+import { clsx } from 'clsx/lite';
+// or
+import clsx from 'clsx/lite';
+
+// string
+clsx('hello', true && 'foo', false && 'bar');
+// => "hello foo"
+
+// NOTE: Any non-string input(s) ignored
+clsx({ foo: true });
+//=> ""
+```
+
 ## Benchmarks
 
 For snapshots of cross-browser results, check out the [`bench`](bench) directory~!
@@ -81,8 +120,8 @@ All browsers that support [`Array.isArray`](https://developer.mozilla.org/en-US/
 ## Tailwind Support
 
 Here some additional (optional) steps to enable classes autocompletion using `clsx` with Tailwind CSS.
-<details>
 
+<details>
 <summary>
   Visual Studio Code
 </summary>
@@ -99,6 +138,12 @@ Here some additional (optional) steps to enable classes autocompletion using `cl
    }
   ```
 </details>
+
+You may find the [`clsx/lite`](#clsxlite) module useful within Tailwind contexts. This is especially true if/when your application **only** composes classes in this pattern:
+
+```js
+clsx('text-base', props.active && 'text-primary', props.className);
+```
 
 ## Related
 
