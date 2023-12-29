@@ -26,7 +26,7 @@ jobs:
 
     - name: (coverage) Install
       if: matrix.nodejs >= 18
-      run: npm install -g nyc
+      run: npm install -g c8
 
     - name: Build
       run: npm run build
@@ -36,13 +36,13 @@ jobs:
       if: matrix.nodejs < 18
 
     - name: (coverage) Test
-      run: nyc --include=src npm test
+      run: c8 --include=src npm test
       if: matrix.nodejs >= 18
 
     - name: (coverage) Report
       if: matrix.nodejs >= 18
       run: |
-        nyc report --reporter=text-lcov > coverage.lcov
+        c8 report --reporter=text-lcov > coverage.lcov
         bash <(curl -s https://codecov.io/bash)
       env:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
