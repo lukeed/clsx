@@ -15,10 +15,10 @@ function toVal(mix) {
 				}
 			}
 		} else {
-			for (k in mix) {
-				if (mix[k]) {
+			for (y in mix) {
+				if (mix[y]) {
 					str && (str += ' ');
-					str += k;
+					str += y;
 				}
 			}
 		}
