@@ -1,17 +1,17 @@
-function toVal(mix, key = "") {
+function toVal(mix, key = '') {
 	var k,
 		y,
-		str = "";
+		str = '';
 
-	if (typeof mix === "string" || typeof mix === "number") {
-		str += key.length ? key + ":" + mix : mix;
-	} else if (typeof mix === "object") {
+	if (typeof mix === 'string' || typeof mix === 'number') {
+		str += key.length ? key + ':' + mix : mix;
+	} else if (typeof mix === 'object') {
 		if (Array.isArray(mix)) {
 			var len = mix.length;
 			for (k = 0; k < len; k++) {
 				if (mix[k]) {
 					if ((y = toVal(mix[k], key))) {
-						str && (str += " ");
+						str && (str += ' ');
 						str += y;
 					}
 				}
@@ -19,10 +19,10 @@ function toVal(mix, key = "") {
 		} else {
 			for (y in mix) {
 				if (mix[y]) {
-					if (typeof mix[y] === "object" && typeof mix[y] !== "function") {
-						str += toVal(mix[y], key.length ? key + ":" + y : y);
+					if (typeof mix[y] === 'object' && typeof mix[y] !== 'function') {
+						str += toVal(mix[y], key.length ? key + ':' + y : y);
 					} else {
-						str && (str += " ");
+						str && (str += ' ');
 						str += y;
 					}
 				}
@@ -37,12 +37,12 @@ export function clsx() {
 	var i = 0,
 		tmp,
 		x,
-		str = "",
+		str = '',
 		len = arguments.length;
 	for (; i < len; i++) {
 		if ((tmp = arguments[i])) {
 			if ((x = toVal(tmp))) {
-				str && (str += " ");
+				str && (str += ' ');
 				str += x;
 			}
 		}
